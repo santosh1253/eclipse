@@ -1,0 +1,24 @@
+package com.guru.test;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+public class SaveObject {
+
+	public static void main(String[] args) {
+		Configuration cfg=new Configuration();
+		//read both mapping,cfg files
+		cfg=cfg.configure("/com/guru/cfgs/config.hbm.xml");
+		//Build Session Factory
+		SessionFactory factory=null;
+		factory=cfg.buildSessionFactory();
+		//Open Session with DB S/W
+		Session session=factory.openSession();
+		
+		
+		
+
+	}
+
+}

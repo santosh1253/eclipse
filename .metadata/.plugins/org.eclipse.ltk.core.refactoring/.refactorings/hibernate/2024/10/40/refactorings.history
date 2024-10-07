@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;config.hbm.xml&apos; to &apos;Hibernate-demo/src/com.guru.cfgs&apos;&#x0D;&#x0A;- Original project: &apos;hibernate&apos;&#x0D;&#x0A;- Destination element: &apos;Hibernate-demo/src/com.guru.cfgs&apos;&#x0D;&#x0A;- Original element: &apos;config.hbm.xml&apos;" description="Copy file" destination="=Hibernate-demo/src&lt;com.guru.cfgs" element1="src/main/java/config.hbm.xml" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1728044001086" units="0" version="1.0"/>
+</session>

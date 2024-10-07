@@ -1,0 +1,49 @@
+package binarytree;
+
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class BinaryTree {
+
+	public Node root;
+
+	public void insert(int data) {
+		Node n = new Node(data);
+		if (root == null) {
+			root = n;
+		}
+		// Inserting the elements level by level
+		Queue<Node> q = new LinkedList<>();
+		q.add(root);
+		while (!q.isEmpty()) {
+			Node curr = q.poll();
+			if (curr.left == null) {
+				curr.left = n;
+				break;
+			} else {
+				q.add(curr.left);
+			}
+			if (curr.right == null) {
+				curr.right = n;
+				break;
+			} else {
+				q.add(curr.right);
+			}
+		}
+	}
+	
+	//print inorder
+	public void inorder()
+	{
+		if(root!=null)
+		{
+			inorder(root.left);
+			
+		}
+	}
+
+	public static void main(String[] args) {
+
+	}
+
+}

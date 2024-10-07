@@ -1,0 +1,23 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping>
+   <class name = "com.Guru.entity.Employee" table = "employee">
+      
+      <meta attribute = "class-description">
+         This class contains the employee detail. 
+      </meta>
+      
+      <id name = "id">
+         <generator class="foreign">
+         <param name="property">manager</param>
+         </generator>
+      </id>
+      
+      <property name = "name"/>
+      <property name = "salary" />
+      <one-to-one name="manager"></one-to-one>
+   </class>
+</hibernate-mapping>

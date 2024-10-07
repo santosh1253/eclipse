@@ -1,0 +1,54 @@
+package mydemo.hb;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.boot.Metadata;
+import org.hibernate.boot.MetadataSources;
+import org.hibernate.boot.registry.StandardServiceRegistry;
+import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+
+import mydemo.hb.entity.Company;
+import mydemo.hb.entity.Employee;
+
+public class ManyToOneApp {
+
+	public static void main(String[] args) {
+		StandardServiceRegistry ssr = new StandardServiceRegistryBuilder().configure("myconfig.hbm.xml").build();
+		Metadata meta = new MetadataSources(ssr).getMetadataBuilder().build();
+		SessionFactory factory = meta.getSessionFactoryBuilder().build();
+		Session ses = factory.openSession();
+		Transaction tr =null;
+		Company c=new Company();
+		c.setAddress("Hyderabad");
+		c.setCname("DivyaSree");
+		c.setRegno(105);
+		Employee e1=new Employee();
+		e1.setCompany(c);
+		e1.setEmpId(009);
+		e1.setEmpname("Sandeep");
+		Employee e2=new Employee();
+		e2.setCompany(c);
+		e2.setEmpId(008);
+		e2.setEmpname("Ravi");
+		System.out.println(c);
+		System.out.println(e1+" "+e2);
+		try
+        {
+            tr = ses.beginTransaction();
+            ses.save(c);
+            ses.save(e1);
+            ses.save(e2);
+            tr.commit();
+            System.out.println("Company and employees saved successfully");
+            
+        }
+        catch(Exception e)
+        {
+        	tr.rollback();
+        	System.out.println("Not saved try again");
+        	
+        }
+		
+	}
+}

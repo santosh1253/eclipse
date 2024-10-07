@@ -1,0 +1,81 @@
+package com.java.programs;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+
+public class Student {
+
+	private int id;
+	protected String name;
+	public Student(int id, String name) {
+		super();
+		this.id = id;
+		this.name = name;
+	}
+	public Student(Student s1) {
+		this.id=s1.id;
+		this.name=s1.name;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	@Override
+	public String toString() {
+		return "Student [id=" + id + ", name=" + name + "]";
+	}
+//	public int compareTo(Student s) {
+//		if(this.id==s.id)
+//		{
+//			return 0;
+//		}
+//		else if(this.id>s.id)
+//			return 1;
+//		else return -1;
+//	}
+}
+class MyClass
+{
+	public static void main(String[] args) {
+		Student s=new Student(1,"Guru");
+		Student s1=new Student(2,"ravi");
+		Student s2=new Student(3,"rama");
+		Student s4=new Student(s1);
+		ArrayList<Student> al=new ArrayList<>();
+		al.add(s);
+		al.add(s1);
+		al.add(s2);
+		al.add(s4);
+		System.out.println(al);
+		Collections.sort(al,new NameComparator());
+		System.out.println("After Sorting");
+		System.out.println(al);
+	}
+}
+class AgeComparator implements Comparator<Student>
+{
+
+	@Override
+	public int compare(Student o1, Student o2) {
+		return o1.getId()-o2.getId();
+	}
+	
+}
+class NameComparator implements Comparator<Student>
+{
+
+	@Override
+	public int compare(Student o1, Student o2) {
+		return  o1.name.compareTo(o2.name);
+	}
+	
+}

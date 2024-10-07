@@ -1,0 +1,22 @@
+package sortings;
+
+public class QuickSort {
+	
+	public int partition(int arr[],int low,int high)
+	{
+		int pivot=arr[high-1];
+		
+		
+		
+	}
+	public static void quicksort(int arr[],int low,int high)
+	{
+		
+	}
+	public static void main(String[] args) {
+		
+		int a[]= {88,5,24,1,9,8};
+		
+	}
+
+}

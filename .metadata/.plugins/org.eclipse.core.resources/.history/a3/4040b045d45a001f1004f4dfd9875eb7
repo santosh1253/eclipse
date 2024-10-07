@@ -1,0 +1,9 @@
+package com.java.programs;
+
+public class Student {
+
+	private int id;
+	private String name;
+	
+	
+}

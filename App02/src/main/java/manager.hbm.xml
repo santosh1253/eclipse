@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+<!-- 
+ <class name="com.dathu.entity.Manager" table="manager">
+        <id name="managerId">
+            <generator class="increment"/>
+        </id>
+        <property name="name"/>
+        <property name="role"/>
+        <list name="employees" cascade="all">
+            <key column="manager_id"/>
+            <one-to-many class="com.dathu.entity.Employee"/>
+        </list>
+    </class> -->
+<hibernate-mapping>
+   <class name = "com.dathu.entity.Manager" table = "manager">
+      <id name = "managerId">
+         <generator class="increment"/>
+      </id>
+      
+      <property name = "name"/>
+      <property name = "role"/>
+      
+      <list name="employees" cascade="all">
+      	<key column="mid"></key>
+      	<index column="type"></index>
+      	<one-to-many class="com.Guru.entity.Employee"/>
+      </list>
+   </class>
+
+   <class name = "com.dathu.entity.Employee" table = "employee">      
+      <id name = "empId">
+         <generator class="increment"/>
+      </id>
+      
+      <property name = "name"/>
+      <property name = "salary" />
+
+   </class>   
+</hibernate-mapping>

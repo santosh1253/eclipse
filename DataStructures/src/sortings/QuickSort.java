@@ -1,0 +1,48 @@
+package sortings;
+
+public class QuickSort {
+	
+	public static int partition(int arr[],int low,int high)
+	{
+		//Choosing last element as pivot
+		int pivot=arr[high];
+		int i=low-1;
+		for(int j=low;j<=high-1;j++)
+		{
+			if(arr[j]<=pivot)
+			{
+				i++;
+				int temp=arr[i];
+				arr[i]=arr[j];
+				arr[j]=temp;
+			}
+		}
+		int temp=arr[i+1];
+		arr[i+1]=arr[high];
+		arr[high]=temp;
+		//Returning the pivot idx
+		return i+1;	
+	}
+	public static void quicksort(int arr[],int low,int high)
+	{
+		if(low<high)
+		{
+		int pivot=partition(arr,low,high);
+		quicksort(arr,low,pivot-1);
+		quicksort(arr,pivot+1,high);
+		}
+		
+	}
+	public static void main(String[] args) {
+		
+		int a[]= {88,5,24,1,9,8};
+		QuickSort.quicksort(a, 0, a.length-1);
+		System.out.println("After Sorting");
+		for(int i=0;i<a.length;i++)
+		{
+			System.out.print(a[i]+" ");
+		}
+		
+	}
+
+}

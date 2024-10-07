@@ -1,0 +1,12 @@
+package snippet;
+
+public class Snippet {
+	Exception in thread "main" org.hibernate.internal.util.config.ConfigurationException: Unable to perform unmarshalling at line number 0 and column 0 in RESOURCE /com/guru/cfgs/config.hbm.xml. Message: null
+		at org.hibernate.boot.cfgxml.internal.JaxbCfgProcessor.unmarshal(JaxbCfgProcessor.java:133)
+		at org.hibernate.boot.cfgxml.internal.JaxbCfgProcessor.unmarshal(JaxbCfgProcessor.java:65)
+		at org.hibernate.boot.cfgxml.internal.ConfigLoader.loadConfigXmlResource(ConfigLoader.java:57)
+		at org.hibernate.boot.registry.StandardServiceRegistryBuilder.configure(StandardServiceRegistryBuilder.java:165)
+		at org.hibernate.cfg.Configuration.configure(Configuration.java:258)
+		at com.guru.test.SaveObject.main(SaveObject.java:15)
+}
+

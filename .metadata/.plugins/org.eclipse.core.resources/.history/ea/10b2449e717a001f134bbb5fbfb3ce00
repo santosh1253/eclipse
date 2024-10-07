@@ -1,0 +1,10 @@
+package com.bank.entity;
+
+import static java.util.ArrayList;
+public class MyList {
+	
+	public static void main(String[] args) {
+		
+	}
+
+}

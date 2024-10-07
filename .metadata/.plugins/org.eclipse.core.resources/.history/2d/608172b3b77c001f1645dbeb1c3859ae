@@ -1,0 +1,32 @@
+package binarytree;
+
+public class BinarySearchTree {
+	public Node root;
+	public Node insert(Node root,int data)
+	{
+		Node n=new Node(data);
+		if(root==null)
+		{
+		 root=n;	
+		 return n;
+		}
+		if(data<root.data)
+		{
+			root.left=insert(root.left,data);
+		}
+		else if(data>root.data)
+		{
+			root.right=insert(root.right,data);
+		}
+		return root;		
+	}
+	public static void main(String[] args) {
+		BinarySearchTree bst=new BinarySearchTree();
+		bst.insert(bst.root,22);
+		bst.insert(bst.root,43);
+		bst.insert(bst.root,54);
+		bst.insert(bst.root,67);
+		
+	}
+
+}
